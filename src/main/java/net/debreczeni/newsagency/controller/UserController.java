@@ -42,16 +42,7 @@ public class UserController {
         modelMapper = new ModelMapper();
     }
 
-    @PostMapping("/signin")
-    @ApiOperation(value = "${UserController.signin}")
-    @ApiResponses(value = {//
-            @ApiResponse(code = 400, message = "Something went wrong"), //
-            @ApiResponse(code = 422, message = "Invalid username/password supplied")})
-    public String login(//
-                        @ApiParam("Username") @RequestParam String username, //
-                        @ApiParam("Password") @RequestParam String password) {
-        return userService.signin(username, password);
-    }
+
 
     @PostMapping("/signup")
     @ApiOperation(value = "${UserController.signup}")

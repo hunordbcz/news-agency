@@ -42,8 +42,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()//
                 .mvcMatchers("/api/auth/signin").permitAll()//
                 .mvcMatchers("/users/signup").permitAll()//
-                .mvcMatchers("/h2-console/**/**").permitAll()
+                .mvcMatchers("/articles/getAll").permitAll()
                 // Disallow everything else..
+//                .anyRequest().authenticated()
                 .anyRequest().authenticated()
                 .and().csrf().and().cors().disable();
 
